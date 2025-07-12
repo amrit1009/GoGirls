@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <script defer src="script.js"></script>
-
-  <meta charset="UTF-8">
-  <title>Welcome | Help Center for Women</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8" />
+  <title>HelpMe</title>
+  <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
 
-  <!-- Welcome Section -->
+  <!-- ✅ Welcome Section -->
   <div id="welcome-section">
-    <h1>Welcome ladies</h1>
-    <p>You are not alone. We are here to help you understand your rights and find solutions.</p>
+    <h1>Welcome Ladies</h1>
+    <p>This platform helps you find out if the problem you're facing has a solution in the Indian Constitution.</p>
     <button onclick="goToProblemFinder()">Find My Problem</button>
   </div>
 
-  <!-- Problem Finder Section (Hidden by default) -->
+  <!-- ✅ Problem Finder Section -->
   <div id="problem-section" style="display: none;">
-  <h2>Find Your Problem</h2>
-  <input type="text" id="search-bar" placeholder="Search your issue..." oninput="searchProblems()">
-  <ul id="problem-list">
-    <!-- Problems will be loaded here -->
-  </ul>
-  <p id="no-results" style="display: none;">No match found. You can select <strong>Other</strong> below.</p>
-  <button onclick="showProblemDetail('other')">Other</button>
-  <div id="problem-detail" style="margin-top: 2rem;"></div>
-  <button onclick="goBack()">⬅️ Back</button>
-</div>
+    <h2>Find Your Problem</h2>
+    
+    <input
+      type="text"
+      id="search-bar"
+      placeholder="Search your issue..."
+      oninput="searchProblems()"
+    />
 
+    <ul id="problem-list"></ul>
+
+    <p id="no-results" style="display: none;">
+      No match found. You can select <strong>Other</strong> below.
+    </p>
+
+    <button onclick="showProblemDetail('other')">Other</button>
+
+    <div id="problem-detail" style="margin-top: 2rem;"></div>
+
+    <button onclick="goBack()">⬅️ Back</button>
+  </div>
 
 </body>
 </html>
+
