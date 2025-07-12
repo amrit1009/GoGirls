@@ -116,34 +116,8 @@ const problems = [
   }
 ];
 
-const translations = {
-  en: {
-    welcome: "Welcome Ladies 🎀🌸",
-    line1: "We are here to support you.",
-    line2: "Click 'Find My Problem' to explore how the law can help you.",
-    findMyProblem: "Find My Problem",
-    searchPlaceholder: "Search your problem...",
-    back: "⬅️ Back"
-  },
-  hi: {
-    welcome: "स्वागत है महिलाओं 🎀🌸",
-    line1: "हम आपकी सहायता के लिए यहाँ हैं।",
-    line2: "'अपनी समस्या खोजें' पर क्लिक करें और जानें कि कानून आपकी कैसे मदद कर सकता है।",
-    findMyProblem: "अपनी समस्या खोजें",
-    searchPlaceholder: "अपनी समस्या खोजें...",
-    back: "⬅️ वापस जाएं"
-  },
-  pa: {
-    welcome: "ਸੁਆਗਤ ਹੈ ਮਹਿਲਾਵਾਂ 🎀🌸",
-    line1: "ਅਸੀਂ ਤੁਹਾਡੀ ਮਦਦ ਲਈ ਇੱਥੇ ਹਾਂ।",
-    line2: "'ਆਪਣੀ ਸਮੱਸਿਆ ਲੱਭੋ' ਤੇ ਕਲਿੱਕ ਕਰੋ ਤੇ ਜਾਣੋ ਕਿ ਕਾਨੂੰਨ ਤੁਹਾਡੀ ਕਿਵੇਂ ਮਦਦ ਕਰ ਸਕਦਾ ਹੈ।",
-    findMyProblem: "ਆਪਣੀ ਸਮੱਸਿਆ ਲੱਭੋ",
-    searchPlaceholder: "ਆਪਣੀ ਸਮੱਸਿਆ ਲੱਭੋ...",
-    back: "⬅️ ਵਾਪਸ ਜਾਓ"
-  }
-};
-
 let currentLang = "en";
+let screenHistory = []; // Track navigation history
 
 function updateLanguage() {
   currentLang = document.getElementById("language-select").value;
@@ -156,127 +130,14 @@ function updateLanguage() {
   document.getElementById("search-bar").placeholder = t.searchPlaceholder;
   document.getElementById("back-button").innerText = t.back;
 
-  ("search-bar").value);
-  }
-}
-function findProblem() {
-  document.getElementById("welcome-section").style.display = "none";
-  document.getElementById("problem-section").style.display = "block";
-  document.getElementById("problem-detail").style.display = "none";
-
-  // ✅ SHOW the back button
-  document.getElementById("back-button").style.display = "inline-block";
-
-  displayProblems();
-}
-
-function displayProblems(filter = "") {
-  const listDiv = document.getElementById("problem-list");
-  listDiv.innerHTML = "";
-
-  const filtered = problems.filter(p =>
-    p.translations[currentLang].name.toLowerCase().includes(filter.toLowerCase())
-  );
-
-  filtered.forEach(p => {
-    const btn = document.createElement("button");
-    btn.innerText = p.translations[currentLang].name;
-    btn.onclick = () => showProblemDetail(p.key);
-    listDiv.appendChild(btn);
-  });
-
-  const otherBtn = document.createElement("button");
-  otherBtn.innerText =
-    currentLang === "hi" ? "अन्य" :
-    currentLang === "pa" ? "ਹੋਰ" :
-    "Other";
-  otherBtn.onclick = () => showProblemDetail("other");
-  listDiv.appendChild(otherBtn);
-}
-
-function showProblemDetail(key) {
-  const detailDiv = document.getElementById("problem-detail");
-
-  if (key === "other") {
-    detailDiv.innerHTML = `<p>${
-      currentLang === "hi"
-        ? "हम आपकी समस्या की पहचान नहीं कर सके। कृपया 181 या 112 पर कॉल करें।"
-        : currentLang === "pa"
-        ? "ਅਸੀਂ ਤੁਹਾਡੀ ਸਮੱਸਿਆ ਦੀ ਪਛਾਣ ਨਹੀਂ ਕਰ ਸਕੇ। ਕਿਰਪਾ ਕਰਕੇ 181 ਜਾਂ 112 ਤੇ ਕਾਲ ਕਰੋ।"
-        : "We couldn't identify your problem. Please call 181 or 112."
-    }</p>`;
-  } else {
-    const p = problems.find(p => p.key === key).translations[currentLang];
-    detailDiv.innerHTML = `
-      <h3>${p.name}</h3>
-      <p>${p.description}</p>
-      <h4>📜 ${
-        currentLang === "hi"
-          ? "संबंधित संवैधानिक अधिकार"
-          : currentLang === "pa"
-          ? "ਸੰਵੈਧਾਨਕ ਅਧਿਕਾਰ"
-          : "Related Constitutional Right"
-      }:</h4>
-      <p>${p.law}</p>
-      <h4>📞 ${
-        currentLang === "hi"
-          ? "हेल्पलाइन"
-          : currentLang === "pa"
-          ? "ਹੈਲਪਲਾਈਨ"
-          : "Helpline"
-      }:</h4>
-      <p>${p.helpline}</p>
-    `;
-  }
-
-  detailDiv.style.display = "block";
-}
-
-function goBack() {
-  const welcome = document.getElementById("welcome-section");
-  const problemList = document.getElementById("problem-section");
-  const detail = document.getElementById("problem-detail");
-  const backButton = document.getElementById("back-button");
-
-  if (detail.style.display === "block") {
-    // From detail to problem list
-    detail.style.display = "none";
-  } else if (problemList.style.display === "block") {
-    // From problem list back to welcome
-    problemList.style.display = "none";
-    backButton.style.display = "none";
-    welcome.style.display = "block";
-  }
-}
-
-document.getElementById("search-bar").addEventListener("input", (e) => {
-  displayProblems(e.target.value);
-});
-let currentLang = "en";
-
-function updateLanguage() {
-  currentLang = document.getElementById("language-select").value;
-  const t = translations[currentLang];
-
-  document.getElementById("welcome-title").innerText = t.welcome;
-  document.getElementById("line1").innerText = t.line1;
-  document.getElementById("line2").innerText = t.line2;
-  document.getElementById("find-button").innerText = t.findMyProblem;
-  document.getElementById("search-bar").placeholder = t.searchPlaceholder;
-  document.getElementById("back-button").innerText = t.back;
-
-  // If list is visible, update list in current language
   if (document.getElementById("problem-section").style.display === "block") {
     displayProblems(document.getElementById("search-bar").value);
   }
 }
 
 function findProblem() {
-  document.getElementById("welcome-section").style.display = "none";
-  document.getElementById("problem-section").style.display = "block";
-  document.getElementById("problem-detail").style.display = "none";
-  document.getElementById("back-button").style.display = "inline-block";
-  displayProblems();
+  screenHistory.push("welcome");
+  showScreen("problemList");
 }
 
 function displayProblems(filter = "") {
@@ -290,7 +151,10 @@ function displayProblems(filter = "") {
   filtered.forEach(p => {
     const btn = document.createElement("button");
     btn.innerText = p.translations[currentLang].name;
-    btn.onclick = () => showProblemDetail(p.key);
+    btn.onclick = () => {
+      screenHistory.push("problemList");
+      showProblemDetail(p.key);
+    };
     listDiv.appendChild(btn);
   });
 
@@ -299,7 +163,10 @@ function displayProblems(filter = "") {
     currentLang === "hi" ? "अन्य" :
     currentLang === "pa" ? "ਹੋਰ" :
     "Other";
-  otherBtn.onclick = () => showProblemDetail("other");
+  otherBtn.onclick = () => {
+    screenHistory.push("problemList");
+    showProblemDetail("other");
+  };
   listDiv.appendChild(otherBtn);
 }
 
@@ -338,30 +205,47 @@ function showProblemDetail(key) {
     `;
   }
 
-  detailDiv.style.display = "block";
+  showScreen("problemDetail");
 }
 
 function goBack() {
-  const welcome = document.getElementById("welcome-section");
-  const problemList = document.getElementById("problem-section");
-  const detail = document.getElementById("problem-detail");
-  const backButton = document.getElementById("back-button");
+  if (screenHistory.length === 0) return;
 
-  if (detail.style.display === "block") {
-    // Go from detail to list
-    detail.style.display = "none";
-  } else if (problemList.style.display === "block") {
-    // Go from problem list to welcome
-    problemList.style.display = "none";
-    backButton.style.display = "none";
-    welcome.style.display = "block";
+  const previous = screenHistory.pop();
+
+  if (previous === "welcome") {
+    showScreen("welcome");
+  } else if (previous === "problemList") {
+    showScreen("problemList");
   }
 }
 
+function showScreen(screen) {
+  // Hide all sections
+  document.getElementById("welcome-section").style.display = "none";
+  document.getElementById("problem-section").style.display = "none";
+  document.getElementById("problem-detail").style.display = "none";
+
+  if (screen === "welcome") {
+    document.getElementById("welcome-section").style.display = "block";
+    document.getElementById("back-button").style.display = "none";
+  } else if (screen === "problemList") {
+    document.getElementById("problem-section").style.display = "block";
+    document.getElementById("problem-detail").style.display = "none";
+    document.getElementById("back-button").style.display = "inline-block";
+    displayProblems(document.getElementById("search-bar").value);
+  } else if (screen === "problemDetail") {
+    document.getElementById("problem-section").style.display = "block";
+    document.getElementById("problem-detail").style.display = "block";
+    document.getElementById("back-button").style.display = "inline-block";
+  }
+}
 
 document.getElementById("search-bar").addEventListener("input", (e) => {
   displayProblems(e.target.value);
 });
+
+
 
 
 
