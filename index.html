@@ -1,55 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <script defer src="script.js"></script>
-  <meta charset="UTF-8" />
+<head>
+  <meta charset="UTF-8">
   <title>HelpMe</title>
-  <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #fff7f9;
+      color: #333;
+    }
+
+    h1 {
+      color: #c2185b;
+    }
+
+    #language-select {
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    #welcome-section {
+      margin-bottom: 2rem;
+    }
+
+    button {
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      background-color: #c2185b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ✅ Language Switch -->
-  <select id="language-select" onchange="changeLanguage()" style="margin-bottom: 1rem;">
+  <!-- Language Selector -->
+  <select id="language-select" onchange="changeLanguage()">
     <option value="en">English</option>
     <option value="hi">हिंदी</option>
     <option value="pa">ਪੰਜਾਬੀ</option>
   </select>
 
-  <!-- ✅ Welcome Section -->
+  <!-- Welcome Section -->
   <div id="welcome-section">
     <h1>🎀 <span id="welcome-title">Welcome Ladies</span> 🌸</h1>
     <p><span id="line1">This platform helps you find out if the problem you're facing</span></p>
     <p><span id="line2">has a solution according to the Indian Constitution.</span></p>
-    <button onclick="goToProblemFinder()">
-      <span id="find-button">Find My Problem</span>
-    </button>
-  </div>
-
-  <!-- ✅ Problem Finder Section -->
-  <div id="problem-section" style="display: none;">
-    <h2>Find Your Problem</h2>
-    
-    <input
-      type="text"
-      id="search-bar"
-      placeholder="Search your issue..."
-      oninput="searchProblems()"
-    />
-
-    <ul id="problem-list"></ul>
-
-    <p id="no-results" style="display: none;">
-      No match found. You can select <strong>Other</strong> below.
-    </p>
-
-    <button onclick="showProblemDetail('other')">Other</button>
-
-    <div id="problem-detail" style="margin-top: 2rem;"></div>
-
-    <button onclick="goBack()">⬅️ Back</button>
+    <button onclick="goToProblemFinder()"><span id="find-button">Find My Problem</span></button>
   </div>
 
 </body>
 </html>
+
 
 
