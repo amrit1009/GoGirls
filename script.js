@@ -148,17 +148,29 @@ function loadProblemList() {
   }
 }
 
-function showProblemDetail(key) {
-  const data = problems[key][currentLang];
-  document.getElementById("problem-section").style.display = "none";
-  document.getElementById("problem-detail").style.display = "block";
-  document.getElementById("back-button").style.display = "block";
-  document.getElementById("problem-detail").innerHTML = `
-    <h2>${data.title}</h2>
-    <p><strong>Explanation:</strong> ${data.explanation}</p>
-    <p><strong>Legal Info:</strong> ${data.law}</p>
-    <p><strong>Helpline:</strong> ${data.helpline}</p>
-  `;
+function showProblemDetail(problemKey) {
+  const problem = problems.find(p => p.key === problemKey);
+  const detailDiv = document.getElementById("problem-detail");
+  const backButton = document.getElementById("back-button");
+
+  if (problem) {
+    detailDiv.innerHTML = `
+      <h3>${problem.name}</h3>
+      <p>${problem.description}</p>
+      <h4>📜 Related Constitutional Right:</h4>
+      <p>${problem.law}</p>
+      <h4>📞 Helpline:</h4>
+      <p>${problem.helpline}</p>
+    `;
+  } else {
+    detailDiv.innerHTML = `<p>We couldn't identify your problem. Please call the national helpline: 181 or 112.</p>`;
+  }
+
+  detailDiv.style.display = "block";
+  backButton.style.display = "inline-block"; // ✅ Always show this
+}
+
+
 }
 
 function goBack() {
