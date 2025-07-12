@@ -70,3 +70,7 @@ function showProblemDetail(problemKey) {
     <p><strong>Helpline:</strong> ${data.helpline}</p>
   `;
 }
+// Populate the list when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+  searchProblems();
+});
