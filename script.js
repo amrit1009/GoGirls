@@ -156,17 +156,17 @@ function updateLanguage() {
   document.getElementById("search-bar").placeholder = t.searchPlaceholder;
   document.getElementById("back-button").innerText = t.back;
 
-  // If list is visible, update list in current language
-  if (document.getElementById("problem-section").style.display === "block") {
-    displayProblems(document.getElementById("search-bar").value);
+  ("search-bar").value);
   }
 }
-
 function findProblem() {
   document.getElementById("welcome-section").style.display = "none";
   document.getElementById("problem-section").style.display = "block";
   document.getElementById("problem-detail").style.display = "none";
+
+  // ✅ SHOW the back button
   document.getElementById("back-button").style.display = "inline-block";
+
   displayProblems();
 }
 
