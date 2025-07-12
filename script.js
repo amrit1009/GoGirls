@@ -1,34 +1,3 @@
-const translations = {
-  en: {
-    welcomeTitle: "Welcome Ladies 🎀🌸",
-    line1: "We are here to support you.",
-    line2: "Click 'Find My Problem' to explore how the law can help you.",
-    findButton: "Find My Problem"
-  },
-  hi: {
-    welcomeTitle: "स्वागत है महिलाओं 🎀🌸",
-    line1: "हम आपकी सहायता के लिए यहां हैं।",
-    line2: "'मेरी समस्या खोजें' पर क्लिक करें यह जानने के लिए कि कानून कैसे मदद कर सकता है।",
-    findButton: "मेरी समस्या खोजें"
-  },
-  pa: {
-    welcomeTitle: "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਔਰਤਾਂ 🎀🌸",
-    line1: "ਅਸੀਂ ਤੁਹਾਡੀ ਮਦਦ ਲਈ ਇੱਥੇ ਹਾਂ।",
-    line2: "'ਮੇਰੀ ਸਮੱਸਿਆ ਲੱਭੋ' 'ਤੇ ਕਲਿੱਕ ਕਰੋ ਜਾਨਣ ਲਈ ਕਿ ਕਾਨੂੰਨ ਤੁਹਾਡੀ ਕਿਵੇਂ ਮਦਦ ਕਰ ਸਕਦਾ ਹੈ।",
-    findButton: "ਮੇਰੀ ਸਮੱਸਿਆ ਲੱਭੋ"
-  }
-};
-
-function updateLanguage() {
-  const lang = document.getElementById("language-select").value;
-  const t = translations[lang];
-
-  document.getElementById("welcome-title").innerText = t.welcomeTitle;
-  document.getElementById("line1").innerText = t.line1;
-  document.getElementById("line2").innerText = t.line2;
-  document.getElementById("find-button").innerText = t.findButton;
-}
-
 const problems = [
   {
     key: "harassment",
@@ -146,6 +115,41 @@ const problems = [
     }
   }
 ];
+
+const translations = {
+  en: {
+    welcomeTitle: "Welcome Ladies 🎀🌸",
+    line1: "We are here to support you.",
+    line2: "Click 'Find My Problem' to explore how the law can help you.",
+    findButton: "Find My Problem"
+  },
+  hi: {
+    welcomeTitle: "स्वागत है महिलाओं 🎀🌸",
+    line1: "हम आपकी सहायता के लिए यहां हैं।",
+    line2: "'मेरी समस्या खोजें' पर क्लिक करें यह जानने के लिए कि कानून कैसे मदद कर सकता है।",
+    findButton: "मेरी समस्या खोजें"
+  },
+  pa: {
+    welcomeTitle: "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਔਰਤਾਂ 🎀🌸",
+    line1: "ਅਸੀਂ ਤੁਹਾਡੀ ਮਦਦ ਲਈ ਇੱਥੇ ਹਾਂ।",
+    line2: "'ਮੇਰੀ ਸਮੱਸਿਆ ਲੱਭੋ' 'ਤੇ ਕਲਿੱਕ ਕਰੋ ਜਾਨਣ ਲਈ ਕਿ ਕਾਨੂੰਨ ਤੁਹਾਡੀ ਕਿਵੇਂ ਮਦਦ ਕਰ ਸਕਦਾ ਹੈ।",
+    findButton: "ਮੇਰੀ ਸਮੱਸਿਆ ਲੱਭੋ"
+  }
+};
+
+function updateLanguage() {
+  const lang = document.getElementById("language-select").value;
+  const t = translations[lang];
+
+  // Safety check
+  if (!t) return;
+
+  document.getElementById("welcome-title").innerText = t.welcomeTitle;
+  document.getElementById("line1").innerText = t.line1;
+  document.getElementById("line2").innerText = t.line2;
+  document.getElementById("find-button").innerText = t.findButton;
+}
+
 
 let currentLang = "en";
 let screenHistory = []; // Track navigation history
