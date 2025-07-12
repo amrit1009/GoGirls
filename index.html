@@ -8,13 +8,22 @@
 </head>
 <body>
 
+  <!-- ✅ Language Switch -->
+  <select id="language-select" onchange="changeLanguage()" style="margin-bottom: 1rem;">
+    <option value="en">English</option>
+    <option value="hi">हिंदी</option>
+    <option value="pa">ਪੰਜਾਬੀ</option>
+  </select>
+
   <!-- ✅ Welcome Section -->
   <div id="welcome-section">
-  <h1>🎀 Welcome Ladies 🌸</h1>
-  <p>This platform helps you find out if the problem you're facing</p>
-  <p>has a solution according to the Indian Constitution.</p>
-  <button onclick="goToProblemFinder()">Find My Problem</button>
-</div>
+    <h1>🎀 <span id="welcome-title">Welcome Ladies</span> 🌸</h1>
+    <p><span id="line1">This platform helps you find out if the problem you're facing</span></p>
+    <p><span id="line2">has a solution according to the Indian Constitution.</span></p>
+    <button onclick="goToProblemFinder()">
+      <span id="find-button">Find My Problem</span>
+    </button>
+  </div>
 
   <!-- ✅ Problem Finder Section -->
   <div id="problem-section" style="display: none;">
@@ -42,4 +51,5 @@
 
 </body>
 </html>
+
 
