@@ -121,35 +121,27 @@ const translations = {
     welcomeTitle: "Welcome Ladies 🎀🌸",
     line1: "We are here to support you.",
     line2: "Click 'Find My Problem' to explore how the law can help you.",
-    findButton: "Find My Problem"
+    findButton: "Find My Problem",
+    searchPlaceholder: "Search a problem...",
+    back: "Back"
   },
   hi: {
     welcomeTitle: "स्वागत है महिलाओं 🎀🌸",
     line1: "हम आपकी सहायता के लिए यहां हैं।",
     line2: "'मेरी समस्या खोजें' पर क्लिक करें यह जानने के लिए कि कानून कैसे मदद कर सकता है।",
-    findButton: "मेरी समस्या खोजें"
+    findButton: "मेरी समस्या खोजें",
+    searchPlaceholder: "एक समस्या खोजें...",
+    back: "वापस"
   },
   pa: {
     welcomeTitle: "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਔਰਤਾਂ 🎀🌸",
     line1: "ਅਸੀਂ ਤੁਹਾਡੀ ਮਦਦ ਲਈ ਇੱਥੇ ਹਾਂ।",
     line2: "'ਮੇਰੀ ਸਮੱਸਿਆ ਲੱਭੋ' 'ਤੇ ਕਲਿੱਕ ਕਰੋ ਜਾਨਣ ਲਈ ਕਿ ਕਾਨੂੰਨ ਤੁਹਾਡੀ ਕਿਵੇਂ ਮਦਦ ਕਰ ਸਕਦਾ ਹੈ।",
-    findButton: "ਮੇਰੀ ਸਮੱਸਿਆ ਲੱਭੋ"
+    findButton: "ਮੇਰੀ ਸਮੱਸਿਆ ਲੱਭੋ",
+    searchPlaceholder: "ਸਮੱਸਿਆ ਲੱਭੋ...",
+    back: "ਵਾਪਸ"
   }
 };
-
-function updateLanguage() {
-  const lang = document.getElementById("language-select").value;
-  const t = translations[lang];
-
-  // Safety check
-  if (!t) return;
-
-  document.getElementById("welcome-title").innerText = t.welcomeTitle;
-  document.getElementById("line1").innerText = t.line1;
-  document.getElementById("line2").innerText = t.line2;
-  document.getElementById("find-button").innerText = t.findButton;
-}
-
 
 let currentLang = "en";
 let screenHistory = []; // Track navigation history
@@ -158,13 +150,23 @@ function updateLanguage() {
   currentLang = document.getElementById("language-select").value;
   const t = translations[currentLang];
 
-  document.getElementById("welcome-title").innerText = t.welcome;
+  if (!t) return;
+
+  // Update text content
+  document.getElementById("welcome-title").innerText = t.welcomeTitle;
   document.getElementById("line1").innerText = t.line1;
   document.getElementById("line2").innerText = t.line2;
-  document.getElementById("find-button").innerText = t.findMyProblem;
-  document.getElementById("search-bar").placeholder = t.searchPlaceholder;
-  document.getElementById("back-button").innerText = t.back;
+  document.getElementById("find-button").innerText = t.findButton;
 
+  // Optional: update placeholder and back button if used
+  if (t.searchPlaceholder) {
+    document.getElementById("search-bar").placeholder = t.searchPlaceholder;
+  }
+  if (t.back) {
+    document.getElementById("back-button").innerText = t.back;
+  }
+
+  // Refresh problem list if visible
   if (document.getElementById("problem-section").style.display === "block") {
     displayProblems(document.getElementById("search-bar").value);
   }
