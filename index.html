@@ -1,49 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <script defer src="script.js"></script>
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HelpMe</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      background-color: #f9f9f9;
-    }
-    #problem-section, #problem-detail, #back-button {
-      display: none;
-      margin-top: 2rem;
-    }
-    button {
-      margin-top: 1rem;
-      padding: 10px 20px;
-      font-size: 16px;
-    }
-    select {
-      margin-top: 1rem;
-    }
+    body { font-family: Arial, sans-serif; padding: 2rem; background: #fefefe; }
+    h1, h2 { color: #d63384; }
+    button { margin: 0.5rem; padding: 0.5rem 1rem; border-radius: 5px; border: none; background-color: #ff69b4; color: white; cursor: pointer; }
+    #problem-section, #problem-detail, #back-button { display: none; margin-top: 1rem; }
+    #language-select { margin-top: 1rem; }
   </style>
 </head>
 <body>
-  <h1 id="welcome-title">Welcome Ladies 🎀🌸</h1>
-  <p id="line1">This platform helps you identify your legal issues and know your rights.</p>
-  <p id="line2">Choose your problem or search for it. You’ll get help based on Indian law.</p>
 
-  <button id="find-button" onclick="findProblem()">Find My Problem</button>
-<button id="back-button" onclick="goBack()" style="display: none;">⬅️ Back</button>
-
-  <br/>
-  <label for="language-select">Choose Language:</label>
-  <select id="language-select" onchange="updateLanguage()">
-    <option value="en">English</option>
-    <option value="hi">हिन्दी</option>
-    <option value="pa">ਪੰਜਾਬੀ</option>
-  </select>
+  <div id="welcome-section">
+    <h1 id="welcome-title">Welcome Ladies 🎀🌸</h1>
+    <p id="line1">We are here to support you.</p>
+    <p id="line2">Click 'Find My Problem' to explore how the law can help you.</p>
+    <button id="find-button" onclick="findProblem()">Find My Problem</button>
+    <br>
+    <label for="language-select">🌐 Choose Language: </label>
+    <select id="language-select" onchange="updateLanguage()">
+      <option value="en">English</option>
+      <option value="hi">हिंदी</option>
+      <option value="pa">ਪੰਜਾਬੀ</option>
+    </select>
+  </div>
 
   <div id="problem-section">
-    <input type="text" id="search-bar" placeholder="Search problems..." oninput="filterProblems()" />
+    <input id="search-bar" placeholder="Search your problem..." />
     <div id="problem-list"></div>
-    <button onclick="showProblemDetail('other')">Other</button>
   </div>
 
   <div id="problem-detail"></div>
@@ -52,6 +39,7 @@
   <script defer src="script.js"></script>
 </body>
 </html>
+
 
 
 
