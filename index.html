@@ -5,11 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HelpMe</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 2rem; background: #fefefe; }
-    h1, h2 { color: #d63384; }
-    button { margin: 0.5rem; padding: 0.5rem 1rem; border-radius: 5px; border: none; background-color: #ff69b4; color: white; cursor: pointer; }
-    #problem-section, #problem-detail, #back-button { display: none; margin-top: 1rem; }
-    #language-select { margin-top: 1rem; }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #fefefe;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: #d63384;
+    }
+
+    button {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      border: none;
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+
+    #problem-section, #problem-detail {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    #language-select {
+      margin-top: 1rem;
+    }
+
+    #back-button {
+      display: none;
+      margin-top: 3rem;
+    }
+
+    #search-bar {
+      margin: 1rem 0;
+      padding: 0.5rem;
+      width: 80%;
+    }
   </style>
 </head>
 <body>
@@ -29,18 +64,21 @@
   </div>
 
   <div id="problem-section">
-  <button id="back-button" onclick="goBack()">⬅️ Back</button>
     <input id="search-bar" placeholder="Search your problem..." />
     <div id="problem-list"></div>
-    <button id="back-button" onclick="goBack()">⬅️ Back</button>
   </div>
 
   <div id="problem-detail"></div>
-  <button id="back-button" onclick="goBack()">⬅️ Back</button>
+
+  <!-- ✅ Single Back Button at Bottom-Center -->
+  <div>
+    <button id="back-button" onclick="goBack()">⬅️ Back</button>
+  </div>
 
   <script defer src="script.js"></script>
 </body>
 </html>
+
 
 
 
