@@ -43,3 +43,41 @@ button {
 button:hover {
   background-color: #c2185b;
 }
+#search-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#problem-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 20px;
+  max-width: 500px;
+}
+
+#problem-list li {
+  background: #fce4ec;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#problem-list li:hover {
+  background: #f8bbd0;
+}
+
+#problem-detail {
+  background: #fff0f4;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: auto;
+  text-align: left;
+}
