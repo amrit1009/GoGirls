@@ -6,6 +6,7 @@ function goToProblemFinder() {
 function goBack() {
   document.getElementById("problem-section").style.display = "none";
   document.getElementById("welcome-section").style.display = "block";
+  searchProblems();
 }
 const problems = {
   "Domestic Violence": {
