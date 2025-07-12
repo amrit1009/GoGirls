@@ -348,15 +348,16 @@ function goBack() {
   const backButton = document.getElementById("back-button");
 
   if (detail.style.display === "block") {
-    // From detail to problem list
+    // Go from detail to list
     detail.style.display = "none";
   } else if (problemList.style.display === "block") {
-    // From problem list back to welcome
+    // Go from problem list to welcome
     problemList.style.display = "none";
     backButton.style.display = "none";
     welcome.style.display = "block";
   }
 }
+
 
 document.getElementById("search-bar").addEventListener("input", (e) => {
   displayProblems(e.target.value);
