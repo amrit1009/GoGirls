@@ -18,10 +18,17 @@
 
   <!-- Problem Finder Section (Hidden by default) -->
   <div id="problem-section" style="display: none;">
-    <h2>Find Your Problem</h2>
-    <p>This section will help you identify your issue and guide you with legal support.</p>
-    <button onclick="goBack()">⬅️ Back</button>
-  </div>
+  <h2>Find Your Problem</h2>
+  <input type="text" id="search-bar" placeholder="Search your issue..." oninput="searchProblems()">
+  <ul id="problem-list">
+    <!-- Problems will be loaded here -->
+  </ul>
+  <p id="no-results" style="display: none;">No match found. You can select <strong>Other</strong> below.</p>
+  <button onclick="showProblemDetail('other')">Other</button>
+  <div id="problem-detail" style="margin-top: 2rem;"></div>
+  <button onclick="goBack()">⬅️ Back</button>
+</div>
+
 
 </body>
 </html>
