@@ -1,97 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <script defer src="script.js"></script>
+<head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HelpMe</title>
-  <script defer src="script.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 2rem;
-      background-color: #fff0f5;
-      color: #333;
-      max-width: 800px;
-      margin: auto;
+      background-color: #f9f9f9;
     }
-
-    h1 {
-      color: #d63384;
-      font-size: 2rem;
-    }
-
-    select, input {
-      padding: 0.6rem;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      padding: 0.7rem 1.4rem;
-      font-size: 1rem;
-      background-color: #d63384;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-
-    .problem-btn {
-      display: block;
-      margin: 0.5rem 0;
-      padding: 0.5rem 1rem;
-      text-align: centre;
-      width: 100%;
-      border-radius: 6px;
-      background-color: #f8d7e3;
-      border: 1px solid #d63384;
-    }
-
     #problem-section, #problem-detail, #back-button {
       display: none;
+      margin-top: 2rem;
     }
-
-    #problem-detail {
-      margin-top: 1.5rem;
-      padding: 1rem;
-      border: 1px solid #d63384;
-      background-color: #ffe2ee;
-      border-radius: 8px;
+    button {
+      margin-top: 1rem;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    select {
+      margin-top: 1rem;
     }
   </style>
 </head>
 <body>
+  <h1 id="welcome-title">Welcome Ladies 🎀🌸</h1>
+  <p id="line1">This platform helps you identify your legal issues and know your rights.</p>
+  <p id="line2">Choose your problem or search for it. You’ll get help based on Indian law.</p>
 
-  <!-- Language Selector -->
-  <select id="language-select">
+  <button id="find-button" onclick="findProblem()">Find My Problem</button>
+
+  <br/>
+  <label for="language-select">Choose Language:</label>
+  <select id="language-select" onchange="updateLanguage()">
     <option value="en">English</option>
-    <option value="hi">हिंदी</option>
+    <option value="hi">हिन्दी</option>
     <option value="pa">ਪੰਜਾਬੀ</option>
   </select>
 
-  <!-- Welcome Section -->
-  <div id="welcome-section">
-    <h1>🎀 <span id="welcome-title">Welcome Ladies</span> 🌸</h1>
-    <p><span id="line1">This platform helps you find out if the problem you're facing</span></p>
-    <p><span id="line2">has a solution according to the Indian Constitution.</span></p>
-    <button onclick="showProblemSection()" id="find-button">Find My Problem</button>
-  </div>
-
-  <!-- Problem Finder Section -->
   <div id="problem-section">
-    <input type="text" id="search-box" placeholder="Search your problem..." oninput="filterProblems()" />
+    <input type="text" id="search-bar" placeholder="Search problems..." oninput="filterProblems()" />
     <div id="problem-list"></div>
     <button onclick="showProblemDetail('other')">Other</button>
   </div>
 
-  <!-- Problem Detail Section -->
   <div id="problem-detail"></div>
   <button id="back-button" onclick="goBack()">⬅️ Back</button>
 
+  <script defer src="script.js"></script>
 </body>
 </html>
+
 
 
   
