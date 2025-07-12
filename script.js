@@ -1,4 +1,5 @@
-const translations = {
+document.addEventListener("DOMContentLoaded", function () {
+  const translations = {
   en: {
     welcome: "Welcome Ladies 🎀🌸",
     line1: "This website is created to help you understand your rights.",
