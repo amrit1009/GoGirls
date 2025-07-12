@@ -1,103 +1,145 @@
-const problems = {
-  eve_teasing: {
-    en: {
-      title: "Eve Teasing",
-      explanation: "Eve teasing refers to public sexual harassment. This is punishable under Section 354 IPC.",
-      law: "According to Indian law, Section 354 and 509 of IPC deal with assault or criminal force to woman with intent to outrage her modesty.",
-      helpline: "Call 1091 or your local women helpline."
-    },
-    hi: {
-      title: "छेड़खानी",
-      explanation: "छेड़खानी सार्वजनिक स्थानों पर यौन उत्पीड़न को दर्शाता है। यह IPC की धारा 354 के तहत दंडनीय है।",
-      law: "भारतीय कानून के अनुसार, IPC की धारा 354 और 509 महिलाओं के साथ दुर्व्यवहार से संबंधित हैं।",
-      helpline: "1091 या स्थानीय महिला हेल्पलाइन पर कॉल करें।"
-    },
-    pa: {
-      title: "ਛੇੜਖਾਨੀ",
-      explanation: "ਛੇੜਖਾਨੀ ਲੋਕੀ ਥਾਵਾਂ 'ਤੇ ਲਿੰਗ ਅਧਾਰਤ ਤੰਗ ਪੇਸ਼ੀ ਹੈ। ਇਹ IPC ਦੀ ਧਾਰਾ 354 ਹੇਠ ਸਜ਼ਾਈੋਗ ਹੈ।",
-      law: "ਭਾਰਤੀ ਕਾਨੂੰਨ ਦੇ ਅਨੁਸਾਰ, IPC ਦੀਆਂ ਧਾਰਾਵਾਂ 354 ਅਤੇ 509 ਇਸ ਨਾਲ ਸੰਬੰਧਿਤ ਹਨ।",
-      helpline: "1091 ਜਾਂ ਸਥਾਨਕ ਮਹਿਲਾ ਹੈਲਪਲਾਈਨ ਨੂੰ ਕਾਲ ਕਰੋ।"
+const problems = [
+  {
+    key: "harassment",
+    translations: {
+      en: {
+        name: "Workplace Harassment",
+        description: "You might be facing verbal, physical, or emotional abuse at work from colleagues or superiors.",
+        law: "According to the Indian Constitution, Article 15 and Article 21 ensure protection of dignity and equality. The POSH Act (2013) also protects against sexual harassment at the workplace.",
+        helpline: "Call 181 (Women Helpline) or 1091 (Police Women Helpline)."
+      },
+      hi: {
+        name: "कार्यस्थल पर उत्पीड़न",
+        description: "आप कार्यस्थल पर सहकर्मियों या वरिष्ठों से मौखिक, शारीरिक या मानसिक उत्पीड़न का सामना कर सकती हैं।",
+        law: "भारतीय संविधान के अनुच्छेद 15 और 21 गरिमा और समानता की सुरक्षा सुनिश्चित करते हैं। POSH अधिनियम (2013) कार्यस्थल पर यौन उत्पीड़न से सुरक्षा देता है।",
+        helpline: "181 (महिला हेल्पलाइन) या 1091 (पुलिस महिला हेल्पलाइन) पर कॉल करें।"
+      },
+      pa: {
+        name: "ਕੰਮ ਦੀ ਥਾਂ ਤੇ ਹਿਰਾਸਤ",
+        description: "ਤੁਸੀਂ ਆਪਣੇ ਸਹਿਕਰਮੀ ਜਾਂ ਉੱਚ ਅਧਿਕਾਰੀਆਂ ਵੱਲੋਂ ਮੌਖਿਕ, ਸਰੀਰਕ ਜਾਂ ਮਨੋਵਿਗਿਆਨਿਕ ਤੰਗ ਪੇਸ਼ੀ ਦਾ ਸਾਹਮਣਾ ਕਰ ਰਹੀਆਂ ਹੋ ਸਕਦੀਆਂ ਹੋ।",
+        law: "ਭਾਰਤੀ ਸੰਵਿਧਾਨ ਦੇ ਆਰਟਿਕਲ 15 ਅਤੇ 21 ਇੱਜ਼ਤ ਅਤੇ ਬਰਾਬਰੀ ਦੀ ਸੁਰੱਖਿਆ ਦਿੰਦੇ ਹਨ। POSH ਐਕਟ (2013) ਕੰਮ ਦੀ ਥਾਂ ਤੇ ਯੌਨ ਹਿਰਾਸਤ ਤੋਂ ਸੁਰੱਖਿਆ ਦਿੰਦਾ ਹੈ।",
+        helpline: "181 (ਮਹਿਲਾ ਹੈਲਪਲਾਈਨ) ਜਾਂ 1091 (ਪੁਲਿਸ ਮਹਿਲਾ ਹੈਲਪਲਾਈਨ) ਤੇ ਕਾਲ ਕਰੋ।"
+      }
     }
   },
-  domestic_violence: {
-    en: {
-      title: "Domestic Violence",
-      explanation: "Any abuse in a domestic setting. Protected under Domestic Violence Act, 2005.",
-      law: "You are protected under the Protection of Women from Domestic Violence Act, 2005.",
-      helpline: "Dial 181 or 1091 for help."
-    },
-    hi: {
-      title: "घरेलू हिंसा",
-      explanation: "घरेलू सेटिंग में किसी भी प्रकार की हिंसा। घरेलू हिंसा अधिनियम, 2005 के तहत संरक्षित।",
-      law: "आप 'घरेलू हिंसा से महिलाओं की सुरक्षा अधिनियम, 2005' के अंतर्गत संरक्षित हैं।",
-      helpline: "181 या 1091 पर कॉल करें।"
-    },
-    pa: {
-      title: "ਘਰੇਲੂ ਹਿੰਸਾ",
-      explanation: "ਘਰੇਲੂ ਹਾਲਾਤਾਂ ਵਿੱਚ ਕਿਸੇ ਵੀ ਤਰ੍ਹਾਂ ਦੀ ਹਿੰਸਾ। 2005 ਦੇ ਘਰੇਲੂ ਹਿੰਸਾ ਕਾਨੂੰਨ ਅਧੀਨ ਸੁਰੱਖਿਅਤ।",
-      law: "ਤੁਸੀਂ 2005 ਦੇ ਘਰੇਲੂ ਹਿੰਸਾ ਤੋਂ ਸੁਰੱਖਿਆ ਕਾਨੂੰਨ ਹੇਠ ਸੁਰੱਖਿਅਤ ਹੋ।",
-      helpline: "181 ਜਾਂ 1091 ਤੇ ਕਾਲ ਕਰੋ।"
+  {
+    key: "domestic_violence",
+    translations: {
+      en: {
+        name: "Domestic Violence",
+        description: "You may be experiencing physical or emotional abuse in your household.",
+        law: "Protected under the Protection of Women from Domestic Violence Act, 2005, and Articles 14, 15, and 21 of the Constitution.",
+        helpline: "Call 181 or 100 (Police Emergency)."
+      },
+      hi: {
+        name: "घरेलू हिंसा",
+        description: "आप अपने घर में शारीरिक या मानसिक उत्पीड़न का सामना कर सकती हैं।",
+        law: "घरेलू हिंसा से महिलाओं का संरक्षण अधिनियम, 2005 और संविधान के अनुच्छेद 14, 15 और 21 के तहत सुरक्षा प्राप्त है।",
+        helpline: "181 या 100 (पुलिस आपातकालीन) पर कॉल करें।"
+      },
+      pa: {
+        name: "ਘਰੇਲੂ ਹਿੰਸਾ",
+        description: "ਤੁਸੀਂ ਆਪਣੇ ਘਰ ਵਿਚ ਸਰੀਰਕ ਜਾਂ ਮਨੋਵਿਗਿਆਨਿਕ ਤੰਗ ਪੇਸ਼ੀ ਦਾ ਸਾਹਮਣਾ ਕਰ ਰਹੀਆਂ ਹੋ ਸਕਦੀਆਂ ਹੋ।",
+        law: "ਘਰੇਲੂ ਹਿੰਸਾ ਤੋਂ ਸੁਰੱਖਿਆ ਕਾਨੂੰਨ 2005 ਅਤੇ ਆਰਟਿਕਲ 14, 15 ਅਤੇ 21 ਦੇ ਤਹਿਤ ਸੁਰੱਖਿਆ ਦਿੰਦਾ ਹੈ।",
+        helpline: "181 ਜਾਂ 100 (ਪੁਲਿਸ ਐਮਰਜੈਂਸੀ) ਤੇ ਕਾਲ ਕਰੋ।"
+      }
     }
   },
-  dowry: {
-    en: {
-      title: "Dowry Demands",
-      explanation: "Demanding dowry is illegal. Punishable under Dowry Prohibition Act, 1961.",
-      law: "Section 498A IPC and Dowry Prohibition Act protect women against dowry harassment.",
-      helpline: "Report to 1091 or nearest police station."
-    },
-    hi: {
-      title: "दहेज की मांग",
-      explanation: "दहेज मांगना गैरकानूनी है। यह दहेज निषेध अधिनियम, 1961 के तहत दंडनीय है।",
-      law: "धारा 498A और दहेज निषेध अधिनियम महिलाओं को सुरक्षा प्रदान करते हैं।",
-      helpline: "1091 या नजदीकी थाने पर रिपोर्ट करें।"
-    },
-    pa: {
-      title: "ਦਾਜ ਦੀ ਮੰਗ",
-      explanation: "ਦਾਜ ਮੰਗਣਾ ਗੈਰਕਾਨੂੰਨੀ ਹੈ। 1961 ਦੇ ਦਾਜ ਰੋਕੂ ਕਾਨੂੰਨ ਅਧੀਨ ਸਜ਼ਾਈੋਗ ਹੈ।",
-      law: "ਧਾਰਾ 498A ਅਤੇ ਦਾਜ ਰੋਕੂ ਕਾਨੂੰਨ ਤੁਹਾਨੂੰ ਸੁਰੱਖਿਆ ਦਿੰਦੇ ਹਨ।",
-      helpline: "1091 ਜਾਂ ਨੇੜਲੇ ਪੁਲਿਸ ਥਾਣੇ ਨੂੰ ਸੂਚਿਤ ਕਰੋ।"
+  {
+    key: "dowry",
+    translations: {
+      en: {
+        name: "Dowry Harassment",
+        description: "Being forced to give dowry or facing harassment due to dowry demands.",
+        law: "Dowry Prohibition Act, 1961 and Section 498A of the IPC protects against dowry-related abuse.",
+        helpline: "Call 181 or visit the nearest police station."
+      },
+      hi: {
+        name: "दहेज उत्पीड़न",
+        description: "दहेज देने के लिए मजबूर किया जाना या दहेज की मांगों के कारण उत्पीड़न झेलना।",
+        law: "दहेज निषेध अधिनियम, 1961 और भारतीय दंड संहिता की धारा 498A दहेज से संबंधित उत्पीड़न से सुरक्षा देती है।",
+        helpline: "181 पर कॉल करें या नजदीकी पुलिस स्टेशन पर जाएं।"
+      },
+      pa: {
+        name: "ਦਾਜ ਉਤਪੀੜਨ",
+        description: "ਦਾਜ ਦੇਣ ਲਈ ਮਜ਼ਬੂਰ ਕੀਤਾ ਜਾਂ ਰਿਹਾ ਹੈ ਜਾਂ ਦਾਜ ਦੀ ਮੰਗ ਕਾਰਨ ਤੰਗ ਪੇਸ਼ੀ ਦਾ ਸਾਹਮਣਾ ਕਰਨਾ ਪੈ ਰਿਹਾ ਹੈ।",
+        law: "ਦਾਜ ਪ੍ਰਤੀਬੰਧ ਐਕਟ, 1961 ਅਤੇ IPC ਦੀ ਧਾਰਾ 498A ਦਾਜ ਨਾਲ ਸਬੰਧਤ ਤੰਗ ਪੇਸ਼ੀ ਤੋਂ ਸੁਰੱਖਿਆ ਦਿੰਦੇ ਹਨ।",
+        helpline: "181 ਤੇ ਕਾਲ ਕਰੋ ਜਾਂ ਨਜ਼ਦੀਕੀ ਪੁਲਿਸ ਥਾਣੇ ਤੇ ਜਾਓ।"
+      }
     }
   },
-  stalking: {
-    en: {
-      title: "Stalking",
-      explanation: "Following or harassing a woman. Section 354D IPC makes it punishable.",
-      law: "Section 354D IPC defines stalking and makes it a cognizable offense.",
-      helpline: "Dial 100 or 1091 immediately."
-    },
-    hi: {
-      title: "पीछा करना",
-      explanation: "किसी महिला का पीछा करना या परेशान करना। धारा 354D IPC के तहत दंडनीय।",
-      law: "धारा 354D IPC के अनुसार यह अपराध है।",
-      helpline: "100 या 1091 पर तुरंत कॉल करें।"
-    },
-    pa: {
-      title: "ਪੀਛਾ ਕਰਨਾ",
-      explanation: "ਕਿਸੇ ਔਰਤ ਦਾ ਪੀਛਾ ਕਰਨਾ ਜਾਂ ਤੰਗ ਕਰਨਾ। ਧਾਰਾ 354D IPC ਹੇਠ ਇਹ ਸਜ਼ਾਈੋਗ ਹੈ।",
-      law: "ਧਾਰਾ 354D IPC ਅਨੁਸਾਰ ਇਹ ਕੌਣੂਨੀ ਉਲੰਘਣਾ ਹੈ।",
-      helpline: "100 ਜਾਂ 1091 'ਤੇ ਫ਼ੌਰੀ ਸੰਪਰਕ ਕਰੋ।"
+  {
+    key: "stalking",
+    translations: {
+      en: {
+        name: "Stalking",
+        description: "Someone is repeatedly following or contacting you against your will.",
+        law: "Stalking is a crime under Section 354D of the IPC.",
+        helpline: "Call 100 or 112 for police assistance."
+      },
+      hi: {
+        name: "पीछा करना",
+        description: "कोई व्यक्ति बार-बार आपकी इच्छा के विरुद्ध आपका पीछा कर रहा है या संपर्क कर रहा है।",
+        law: "IPC की धारा 354D के तहत पीछा करना अपराध है।",
+        helpline: "100 या 112 पर कॉल करें।"
+      },
+      pa: {
+        name: "ਪੀਛਾ ਕਰਨਾ",
+        description: "ਕੋਈ ਵਾਰੀ-ਵਾਰੀ ਤੁਹਾਡਾ ਪੀਛਾ ਕਰ ਰਿਹਾ ਹੈ ਜਾਂ ਤੁਹਾਡੇ ਨਾਲ ਬੇਇਛਾ ਸੰਪਰਕ ਕਰ ਰਿਹਾ ਹੈ।",
+        law: "IPC ਦੀ ਧਾਰਾ 354D ਦੇ ਤਹਿਤ ਪੀਛਾ ਕਰਨਾ ਇਕ ਅਪਰਾਧ ਹੈ।",
+        helpline: "100 ਜਾਂ 112 ਤੇ ਕਾਲ ਕਰੋ।"
+      }
     }
   },
-  cyber_harassment: {
-    en: {
-      title: "Cyber Harassment",
-      explanation: "Online threats, messages, or blackmail. Covered under IT Act and IPC 354A.",
-      law: "Indian IT Act and IPC protect against online abuse and harassment.",
-      helpline: "Report to Cyber Cell or call 1091."
-    },
-    hi: {
-      title: "साइबर उत्पीड़न",
-      explanation: "ऑनलाइन धमकी, संदेश या ब्लैकमेल। IT अधिनियम और IPC 354A के तहत संरक्षित।",
-      law: "भारतीय IT अधिनियम और IPC ऑनलाइन दुर्व्यवहार से सुरक्षा प्रदान करते हैं।",
-      helpline: "साइबर सेल में रिपोर्ट करें या 1091 पर कॉल करें।"
-    },
-    pa: {
-      title: "ਸਾਈਬਰ ਤੰਗ ਪੇਸ਼ੀ",
-      explanation: "ਆਨਲਾਈਨ ਧਮਕੀਆਂ ਜਾਂ ਸੰਦੇਸ਼। IT ਐਕਟ ਅਤੇ IPC 354A ਅਧੀਨ ਸੁਰੱਖਿਅਤ।",
-      law: "ਭਾਰਤੀ IT ਐਕਟ ਅਤੇ IPC ਤੁਹਾਨੂੰ ਆਨਲਾਈਨ ਹਿੰਸਾ ਤੋਂ ਬਚਾਉਂਦੇ ਹਨ।",
-      helpline: "Cyber Cell 'ਚ ਸ਼ਿਕਾਇਤ ਦਿਓ ਜਾਂ 1091 ਨੂੰ ਕਾਲ ਕਰੋ।"
+  {
+    key: "cyber_crime",
+    translations: {
+      en: {
+        name: "Cyber Crime",
+        description: "Facing harassment or threats through digital platforms.",
+        law: "The Information Technology Act, 2000 and IPC Section 66A protect against cyber offenses.",
+        helpline: "Report at cybercrime.gov.in or call 1930."
+      },
+      hi: {
+        name: "साइबर अपराध",
+        description: "डिजिटल प्लेटफ़ॉर्म्स के माध्यम से उत्पीड़न या धमकियों का सामना करना।",
+        law: "सूचना प्रौद्योगिकी अधिनियम, 2000 और IPC की धारा 66A साइबर अपराधों से सुरक्षा देती है।",
+        helpline: "cybercrime.gov.in पर रिपोर्ट करें या 1930 पर कॉल करें।"
+      },
+      pa: {
+        name: "ਸਾਈਬਰ ਜੁਰਮ",
+        description: "ਡਿਜ਼ੀਟਲ ਪਲੇਟਫਾਰਮਾਂ ਰਾਹੀਂ ਤੰਗ ਪੇਸ਼ੀ ਜਾਂ ਧਮਕੀਆਂ ਦਾ ਸਾਹਮਣਾ ਕਰਨਾ।",
+        law: "ਸੂਚਨਾ ਤਕਨਾਲੋਜੀ ਐਕਟ, 2000 ਅਤੇ IPC ਦੀ ਧਾਰਾ 66A ਸਾਈਬਰ ਜੁਰਮਾਂ ਤੋਂ ਸੁਰੱਖਿਆ ਦਿੰਦੇ ਹਨ।",
+        helpline: "cybercrime.gov.in ਤੇ ਰਿਪੋਰਟ ਕਰੋ ਜਾਂ 1930 ਤੇ ਕਾਲ ਕਰੋ।"
+      }
     }
+  }
+];
+
+const translations = {
+  en: {
+    welcome: "Welcome Ladies 🎀🌸",
+    line1: "We are here to support you.",
+    line2: "Click 'Find My Problem' to explore how the law can help you.",
+    findMyProblem: "Find My Problem",
+    searchPlaceholder: "Search your problem...",
+    back: "⬅️ Back"
+  },
+  hi: {
+    welcome: "स्वागत है महिलाओं 🎀🌸",
+    line1: "हम आपकी सहायता के लिए यहाँ हैं।",
+    line2: "'अपनी समस्या खोजें' पर क्लिक करें और जानें कि कानून आपकी कैसे मदद कर सकता है।",
+    findMyProblem: "अपनी समस्या खोजें",
+    searchPlaceholder: "अपनी समस्या खोजें...",
+    back: "⬅️ वापस जाएं"
+  },
+  pa: {
+    welcome: "ਸੁਆਗਤ ਹੈ ਮਹਿਲਾਵਾਂ 🎀🌸",
+    line1: "ਅਸੀਂ ਤੁਹਾਡੀ ਮਦਦ ਲਈ ਇੱਥੇ ਹਾਂ।",
+    line2: "'ਆਪਣੀ ਸਮੱਸਿਆ ਲੱਭੋ' ਤੇ ਕਲਿੱਕ ਕਰੋ ਤੇ ਜਾਣੋ ਕਿ ਕਾਨੂੰਨ ਤੁਹਾਡੀ ਕਿਵੇਂ ਮਦਦ ਕਰ ਸਕਦਾ ਹੈ।",
+    findMyProblem: "ਆਪਣੀ ਸਮੱਸਿਆ ਲੱਭੋ",
+    searchPlaceholder: "ਆਪਣੀ ਸਮੱਸਿਆ ਲੱਭੋ...",
+    back: "⬅️ ਵਾਪਸ ਜਾਓ"
   }
 };
 
@@ -105,94 +147,77 @@ let currentLang = "en";
 
 function updateLanguage() {
   currentLang = document.getElementById("language-select").value;
-  document.getElementById("welcome-title").innerText = {
-    en: "Welcome Ladies 🎀🌸",
-    hi: "स्वागत है महिलाओं 🎀🌸",
-    pa: "ਸੁਆਗਤ ਹੈ ਮਹਿਲਾਵਾਂ 🎀🌸"
-  }[currentLang];
-
-  document.getElementById("line1").innerText = {
-    en: "This platform helps you identify your legal issues and know your rights.",
-    hi: "यह मंच आपकी कानूनी समस्याओं की पहचान करने और अपने अधिकारों को जानने में मदद करता है।",
-    pa: "ਇਹ ਪਲੇਟਫਾਰਮ ਤੁਹਾਨੂੰ ਆਪਣੀਆਂ ਕਾਨੂੰਨੀ ਸਮੱਸਿਆਵਾਂ ਦੀ ਪਛਾਣ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ।"
-  }[currentLang];
-
-  document.getElementById("line2").innerText = {
-    en: "Choose your problem or search for it. You’ll get help based on Indian law.",
-    hi: "अपनी समस्या चुनें या खोजें। आपको भारतीय कानून के अनुसार सहायता मिलेगी।",
-    pa: "ਆਪਣੀ ਸਮੱਸਿਆ ਚੁਣੋ ਜਾਂ ਖੋਜੋ। ਤੁਹਾਨੂੰ ਭਾਰਤੀ ਕਾਨੂੰਨ ਅਨੁਸਾਰ ਮਦਦ ਮਿਲੇਗੀ।"
-  }[currentLang];
+  const t = translations[currentLang];
+  document.getElementById("welcome-title").innerText = t.welcome;
+  document.getElementById("line1").innerText = t.line1;
+  document.getElementById("line2").innerText = t.line2;
+  document.getElementById("find-button").innerText = t.findMyProblem;
+  document.getElementById("search-bar").placeholder = t.searchPlaceholder;
+  document.getElementById("back-button").innerText = t.back;
 
   if (document.getElementById("problem-section").style.display === "block") {
-    loadProblemList();
+    displayProblems(document.getElementById("search-bar").value);
   }
 }
 
 function findProblem() {
-  document.getElementById("welcome-title").style.display = "none";
-  document.getElementById("line1").style.display = "none";
-  document.getElementById("line2").style.display = "none";
-  document.getElementById("find-button").style.display = "none";
+  document.getElementById("welcome-section").style.display = "none";
   document.getElementById("problem-section").style.display = "block";
-  loadProblemList();
+  displayProblems();
 }
 
-function loadProblemList() {
+function displayProblems(filter = "") {
   const listDiv = document.getElementById("problem-list");
   listDiv.innerHTML = "";
-  for (const key in problems) {
+
+  const filtered = problems.filter(p =>
+    p.translations[currentLang].name.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  filtered.forEach(p => {
     const btn = document.createElement("button");
-    btn.innerText = problems[key][currentLang].title;
-    btn.onclick = () => showProblemDetail(key);
+    btn.innerText = p.translations[currentLang].name;
+    btn.onclick = () => showProblemDetail(p.key);
     listDiv.appendChild(btn);
-  }
+  });
+
+  const otherBtn = document.createElement("button");
+  otherBtn.innerText = currentLang === "hi" ? "अन्य" : currentLang === "pa" ? "ਹੋਰ" : "Other";
+  otherBtn.onclick = () => showProblemDetail("other");
+  listDiv.appendChild(otherBtn);
 }
 
-function showProblemDetail(problemKey) {
-  const problem = problems.find(p => p.key === problemKey);
+function showProblemDetail(key) {
   const detailDiv = document.getElementById("problem-detail");
   const backButton = document.getElementById("back-button");
 
-  if (problem) {
-    detailDiv.innerHTML = `
-      <h3>${problem.name}</h3>
-      <p>${problem.description}</p>
-      <h4>📜 Related Constitutional Right:</h4>
-      <p>${problem.law}</p>
-      <h4>📞 Helpline:</h4>
-      <p>${problem.helpline}</p>
-    `;
+  if (key === "other") {
+    detailDiv.innerHTML = `<p>${currentLang === "hi" ? "हम आपकी समस्या की पहचान नहीं कर सके। कृपया 181 या 112 पर कॉल करें।" : currentLang === "pa" ? "ਅਸੀਂ ਤੁਹਾਡੀ ਸਮੱਸਿਆ ਦੀ ਪਛਾਣ ਨਹੀਂ ਕਰ ਸਕੇ। ਕਿਰਪਾ ਕਰਕੇ 181 ਜਾਂ 112 ਤੇ ਕਾਲ ਕਰੋ।" : "We couldn't identify your problem. Please call 181 or 112."}</p>`;
   } else {
-    detailDiv.innerHTML = `<p>We couldn't identify your problem. Please call the national helpline: 181 or 112.</p>`;
+    const p = problems.find(p => p.key === key).translations[currentLang];
+    detailDiv.innerHTML = `
+      <h3>${p.name}</h3>
+      <p>${p.description}</p>
+      <h4>📜 ${currentLang === "hi" ? "संबंधित संवैधानिक अधिकार" : currentLang === "pa" ? "ਸੰਵੈਧਾਨਕ ਅਧਿਕਾਰ" : "Related Constitutional Right"}:</h4>
+      <p>${p.law}</p>
+      <h4>📞 ${currentLang === "hi" ? "हेल्पलाइन" : currentLang === "pa" ? "ਹੈਲਪਲਾਈਨ" : "Helpline"}:</h4>
+      <p>${p.helpline}</p>
+    `;
   }
 
   detailDiv.style.display = "block";
-  backButton.style.display = "inline-block"; // ✅ Always show this
-}
-
-
+  backButton.style.display = "inline-block";
 }
 
 function goBack() {
   document.getElementById("problem-detail").style.display = "none";
   document.getElementById("back-button").style.display = "none";
-  document.getElementById("problem-section").style.display = "block";
 }
 
-function filterProblems() {
-  const searchText = document.getElementById("search-bar").value.toLowerCase();
-  const listDiv = document.getElementById("problem-list");
-  listDiv.innerHTML = "";
-  for (const key in problems) {
-    const title = problems[key][currentLang].title.toLowerCase();
-    if (title.includes(searchText)) {
-      const btn = document.createElement("button");
-      btn.innerText = problems[key][currentLang].title;
-      btn.onclick = () => showProblemDetail(key);
-      listDiv.appendChild(btn);
-    }
-  }
-}
+document.getElementById("search-bar").addEventListener("input", (e) => {
+  displayProblems(e.target.value);
+});
+
 
   
 
