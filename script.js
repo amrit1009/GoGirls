@@ -184,6 +184,29 @@ const problems = [
   }
 },
   {
+  key: "denial_of_education",
+  translations: {
+    en: {
+      name: "Denial of Education",
+      description: "Being prevented from attending school or accessing learning opportunities due to gender, caste, or financial reasons.",
+      law: "Article 21A of the Constitution guarantees the right to education for children aged 6–14. Article 15 prohibits discrimination based on caste, religion, or gender.",
+      helpline: "Call 14417 (Education Helpline) or 1098 (Childline)"
+    },
+    hi: {
+      name: "शिक्षा से वंचित करना",
+      description: "लिंग, जाति या आर्थिक कारणों से स्कूल जाने या शिक्षा प्राप्त करने से रोका जाना।",
+      law: "अनुच्छेद 21A 6–14 वर्ष के बच्चों के लिए शिक्षा का अधिकार सुनिश्चित करता है। अनुच्छेद 15 जाति, धर्म या लिंग के आधार पर भेदभाव को रोकता है।",
+      helpline: "14417 (शिक्षा हेल्पलाइन) या 1098 पर कॉल करें"
+    },
+    pa: {
+      name: "ਸਿੱਖਿਆ ਤੋਂ ਵੰਜਿਤ ਕਰਨਾ",
+      description: "ਲਿੰਗ, ਜਾਤ ਜਾਂ ਵਿੱਤੀ ਹਾਲਾਤ ਕਾਰਨ ਸਕੂਲ ਜਾਂ ਸਿੱਖਣ ਦੇ ਮੌਕੇ ਤੋਂ ਰੋਕਿਆ ਜਾਣਾ।",
+      law: "ਆਰਟਿਕਲ 21A 6–14 ਸਾਲ ਦੇ ਬੱਚਿਆਂ ਲਈ ਸਿੱਖਿਆ ਦਾ ਅਧਿਕਾਰ ਦਿੰਦਾ ਹੈ। ਆਰਟਿਕਲ 15 ਜਾਤ, ਧਰਮ ਜਾਂ ਲਿੰਗ ਅਧਾਰਤ ਭੇਦਭਾਵ ਨੂੰ ਰੋਕਦਾ ਹੈ।",
+      helpline: "14417 (ਸਿੱਖਿਆ ਹੈਲਪਲਾਈਨ) ਜਾਂ 1098 ਤੇ ਕਾਲ ਕਰੋ"
+    }
+  }
+},
+  {
     key: "acid_attack_threat",
   translations: {
     en: {
