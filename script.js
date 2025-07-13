@@ -184,29 +184,6 @@ const problems = [
   }
 },
   {
-    key: "public_harassment",
-  translations: {
-    en: {
-      name: "Sexual Harassment in Public",
-      description: "Facing lewd comments, gestures, or advances in public places like streets or buses.",
-      law: "Section 354A of IPC and Article 21 protect against harassment and uphold the right to dignity.",
-      helpline: "Call 1091 or use the 112 emergency helpline"
-    },
-    hi: {
-      name: "सार्वजनिक स्थानों पर यौन उत्पीड़न",
-      description: "सड़कों या बसों जैसे सार्वजनिक स्थानों पर अश्लील टिप्पणियाँ या इशारे झेलना।",
-      law: "IPC की धारा 354A और अनुच्छेद 21 उत्पीड़न से सुरक्षा और गरिमा के अधिकार की पुष्टि करते हैं।",
-      helpline: "1091 या 112 (आपातकालीन हेल्पलाइन) पर कॉल करें"
-    },
-    pa: {
-      name: "ਸਾਰਵਜਨਿਕ ਥਾਵਾਂ 'ਤੇ ਯੌਨ ਉਤਪੀੜਨ",
-      description: "ਗਲੀਆਂ ਜਾਂ ਬੱਸਾਂ ਵਰਗੀਆਂ ਥਾਵਾਂ 'ਤੇ ਅਸ਼ਲੀਲ ਟਿੱਪਣੀਆਂ ਜਾਂ ਇਸ਼ਾਰੇ।",
-      law: "IPC ਦੀ ਧਾਰਾ 354A ਅਤੇ ਆਰਟਿਕਲ 21 ਹਿਰਾਸਤ ਤੋਂ ਬਚਾਅ ਅਤੇ ਇੱਜ਼ਤ ਦੇ ਅਧਿਕਾਰ ਦੀ ਗਾਰੰਟੀ ਦਿੰਦੇ ਹਨ।",
-      helpline: "1091 ਜਾਂ 112 (ਐਮਰਜੈਂਸੀ ਹੈਲਪਲਾਈਨ) ਤੇ ਕਾਲ ਕਰੋ"
-    }
-  }
-},
-  {
     key: "acid_attack_threat",
   translations: {
     en: {
