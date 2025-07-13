@@ -113,7 +113,122 @@ const problems = [
         helpline: "cybercrime.gov.in ਤੇ ਰਿਪੋਰਟ ਕਰੋ ਜਾਂ 1930 ਤੇ ਕਾਲ ਕਰੋ।"
       }
     }
+  },
+  {
+    key: "cyberbullying",
+    translations: {
+      en: {
+        name: "Cyberbullying",
+        description: "Being harassed or bullied online via social media or messaging platforms.",
+        law: "Protected under the IT Act, 2000 and Articles 19 and 21 of the Constitution ensuring dignity and freedom of speech.",
+        helpline: "Call 1930 or report at cybercrime.gov.in"
+     },
+      hi: {
+        name: "साइबर बदमाशी",
+        description: "सोशल मीडिया या मैसेजिंग प्लेटफ़ॉर्म पर ऑनलाइन परेशान या धमकाया जाना।",
+        law: "आईटी अधिनियम, 2000 और संविधान के अनुच्छेद 19 और 21 के तहत गरिमा और अभिव्यक्ति की स्वतंत्रता की रक्षा की जाती है।",
+        helpline: "1930 पर कॉल करें या cybercrime.gov.in पर रिपोर्ट करें"
+    },
+      pa: {
+        name: "ਸਾਇਬਰ ਧਮਕੀਆਂ",
+        description: "ਸੋਸ਼ਲ ਮੀਡੀਆ ਜਾਂ ਮੈਸੇਜਿੰਗ ਪਲੇਟਫਾਰਮ ਰਾਹੀਂ ਆਨਲਾਈਨ ਤੰਗ ਪੇਸ਼ੀ ਜਾਂ ਧਮਕੀਆਂ ਮਿਲਣੀਆਂ।",
+        law: "ਆਈਟੀ ਐਕਟ, 2000 ਅਤੇ ਆਰਟਿਕਲ 19 ਅਤੇ 21 ਅਧੀਨ ਇਜ਼ਤ ਅਤੇ ਬੋਲਣ ਦੀ ਆਜ਼ਾਦੀ ਦੀ ਸੁਰੱਖਿਆ।",
+        helpline: "1930 ਤੇ ਕਾਲ ਕਰੋ ਜਾਂ cybercrime.gov.in ਤੇ ਸ਼ਿਕਾਇਤ ਕਰੋ"
+    }
   }
+},
+  {
+    key: "forced_marriage",
+  translations: {
+    en: {
+      name: "Forced Marriage",
+      description: "Being coerced into marriage against your will.",
+      law: "Article 21 guarantees the right to personal liberty. Forced marriage can be challenged under this article and Prohibition of Child Marriage Act (if minor).",
+      helpline: "Call 181 or 1098 (Child Helpline)"
+    },
+    hi: {
+      name: "जबरन शादी",
+      description: "आपकी इच्छा के विरुद्ध शादी के लिए मजबूर किया जाना।",
+      law: "अनुच्छेद 21 व्यक्तिगत स्वतंत्रता का अधिकार देता है। जबरन विवाह इस अनुच्छेद और बाल विवाह निषेध अधिनियम के अंतर्गत चुनौती दी जा सकती है।",
+      helpline: "181 या 1098 (चाइल्ड हेल्पलाइन) पर कॉल करें"
+    },
+    pa: {
+      name: "ਜਬਰਨ ਵਿਆਹ",
+      description: "ਤੁਹਾਡੀ ਇੱਛਾ ਦੇ ਵਿਰੁੱਧ ਵਿਆਹ ਲਈ ਮਜਬੂਰ ਕੀਤਾ ਜਾਣਾ।",
+      law: "ਆਰਟਿਕਲ 21 ਨਿੱਜੀ ਆਜ਼ਾਦੀ ਦਾ ਅਧਿਕਾਰ ਦਿੰਦਾ ਹੈ। ਜਬਰਨ ਵਿਆਹ ਨੂੰ ਇਸ ਆਰਟਿਕਲ ਅਤੇ ਬਾਲ ਵਿਆਹ ਰੋਕੂ ਕਾਨੂੰਨ ਤਹਿਤ ਚੁਣੌਤੀ ਦਿੱਤੀ ਜਾ ਸਕਦੀ ਹੈ।",
+      helpline: "181 ਜਾਂ 1098 (ਬੱਚਿਆਂ ਦੀ ਹੈਲਪਲਾਈਨ) ਤੇ ਕਾਲ ਕਰੋ"
+    }
+  }
+},
+  {
+    key: "public_harassment",
+  translations: {
+    en: {
+      name: "Sexual Harassment in Public",
+      description: "Facing lewd comments, gestures, or advances in public places like streets or buses.",
+      law: "Section 354A of IPC and Article 21 protect against harassment and uphold the right to dignity.",
+      helpline: "Call 1091 or use the 112 emergency helpline"
+    },
+    hi: {
+      name: "सार्वजनिक स्थानों पर यौन उत्पीड़न",
+      description: "सड़कों या बसों जैसे सार्वजनिक स्थानों पर अश्लील टिप्पणियाँ या इशारे झेलना।",
+      law: "IPC की धारा 354A और अनुच्छेद 21 उत्पीड़न से सुरक्षा और गरिमा के अधिकार की पुष्टि करते हैं।",
+      helpline: "1091 या 112 (आपातकालीन हेल्पलाइन) पर कॉल करें"
+    },
+    pa: {
+      name: "ਸਾਰਵਜਨਿਕ ਥਾਵਾਂ 'ਤੇ ਯੌਨ ਉਤਪੀੜਨ",
+      description: "ਗਲੀਆਂ ਜਾਂ ਬੱਸਾਂ ਵਰਗੀਆਂ ਥਾਵਾਂ 'ਤੇ ਅਸ਼ਲੀਲ ਟਿੱਪਣੀਆਂ ਜਾਂ ਇਸ਼ਾਰੇ।",
+      law: "IPC ਦੀ ਧਾਰਾ 354A ਅਤੇ ਆਰਟਿਕਲ 21 ਹਿਰਾਸਤ ਤੋਂ ਬਚਾਅ ਅਤੇ ਇੱਜ਼ਤ ਦੇ ਅਧਿਕਾਰ ਦੀ ਗਾਰੰਟੀ ਦਿੰਦੇ ਹਨ।",
+      helpline: "1091 ਜਾਂ 112 (ਐਮਰਜੈਂਸੀ ਹੈਲਪਲਾਈਨ) ਤੇ ਕਾਲ ਕਰੋ"
+    }
+  }
+},
+  {
+    key: "public_harassment",
+  translations: {
+    en: {
+      name: "Sexual Harassment in Public",
+      description: "Facing lewd comments, gestures, or advances in public places like streets or buses.",
+      law: "Section 354A of IPC and Article 21 protect against harassment and uphold the right to dignity.",
+      helpline: "Call 1091 or use the 112 emergency helpline"
+    },
+    hi: {
+      name: "सार्वजनिक स्थानों पर यौन उत्पीड़न",
+      description: "सड़कों या बसों जैसे सार्वजनिक स्थानों पर अश्लील टिप्पणियाँ या इशारे झेलना।",
+      law: "IPC की धारा 354A और अनुच्छेद 21 उत्पीड़न से सुरक्षा और गरिमा के अधिकार की पुष्टि करते हैं।",
+      helpline: "1091 या 112 (आपातकालीन हेल्पलाइन) पर कॉल करें"
+    },
+    pa: {
+      name: "ਸਾਰਵਜਨਿਕ ਥਾਵਾਂ 'ਤੇ ਯੌਨ ਉਤਪੀੜਨ",
+      description: "ਗਲੀਆਂ ਜਾਂ ਬੱਸਾਂ ਵਰਗੀਆਂ ਥਾਵਾਂ 'ਤੇ ਅਸ਼ਲੀਲ ਟਿੱਪਣੀਆਂ ਜਾਂ ਇਸ਼ਾਰੇ।",
+      law: "IPC ਦੀ ਧਾਰਾ 354A ਅਤੇ ਆਰਟਿਕਲ 21 ਹਿਰਾਸਤ ਤੋਂ ਬਚਾਅ ਅਤੇ ਇੱਜ਼ਤ ਦੇ ਅਧਿਕਾਰ ਦੀ ਗਾਰੰਟੀ ਦਿੰਦੇ ਹਨ।",
+      helpline: "1091 ਜਾਂ 112 (ਐਮਰਜੈਂਸੀ ਹੈਲਪਲਾਈਨ) ਤੇ ਕਾਲ ਕਰੋ"
+    }
+  }
+},
+  {
+    key: "acid_attack_threat",
+  translations: {
+    en: {
+      name: "Acid Attack Threat",
+      description: "Receiving threats or being attacked with acid or harmful chemicals.",
+      law: "Section 326A and 326B of IPC punish acid attacks and threats severely. Article 21 guarantees life with dignity.",
+      helpline: "Call 100 or 181 immediately"
+    },
+    hi: {
+      name: "एसिड अटैक की धमकी",
+      description: "एसिड या हानिकारक रसायनों से हमले या धमकियाँ मिलना।",
+      law: "IPC की धारा 326A और 326B एसिड अटैक और धमकियों के लिए कठोर सज़ा देती हैं। अनुच्छेद 21 गरिमा के साथ जीवन का अधिकार देता है।",
+      helpline: "100 या 181 पर तुरंत कॉल करें"
+    },
+    pa: {
+      name: "ਐਸਿਡ ਹਮਲੇ ਦੀ ਧਮਕੀ",
+      description: "ਐਸਿਡ ਜਾਂ ਖ਼ਤਰਨਾਕ ਰਸਾਇਣਾਂ ਨਾਲ ਹਮਲੇ ਦੀ ਧਮਕੀ ਜਾਂ ਹਮਲਾ ਹੋਣਾ।",
+      law: "IPC ਦੀ ਧਾਰਾ 326A ਅਤੇ 326B ਐਸਿਡ ਹਮਲਿਆਂ ਅਤੇ ਧਮਕੀਆਂ ਲਈ ਸਖ਼ਤ ਸਜ਼ਾ ਦਿੰਦੀ ਹੈ। ਆਰਟਿਕਲ 21 ਇੱਜ਼ਤ ਨਾਲ ਜੀਣ ਦਾ ਅਧਿਕਾਰ ਦਿੰਦਾ ਹੈ।",
+      helpline: "100 ਜਾਂ 181 ਤੇ ਤੁਰੰਤ ਕਾਲ ਕਰੋ"
+    }
+  }
+}
 ];
 
 const translations = {
